@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS | Comparisons and Conditionals</title>
+  <script>
+  var number1 = 2;
+  var number2 = 15;
+  var stringNum1 = "2";
+  var stringNum2 = "444";
+  var stringLength = stringNum2.length;
+
+  var result1 = number1 == stringNum1;
+  var result2 = number1 == stringNum2;
+  var result3 = number1 == stringLength;
+  var result4 = number1 < number2;
+  var result5 = number1 > number2;
+
+  console.log('result1 is:', result1);
+  console.log('result2 is:', result2);
+  console.log('result3 is:', result3);
+  console.log('result4 is:', result4);
+  console.log('result5 is:', result5);
+
+  var gameNumber = 64;
+  var userInput1 = 55;
+  var userInput2 = 64;
+
+  if(userInput1 > gameNumber) {
+    console.log('The number is too high')
+  }
+
+  if (userInput1 < gameNumber) {
+      console.log('The number is too low')
+    }
+
+  if (userInput1 < 1 || userInput1 > 100) {
+    console.log('the number is out of range');
+  } else{
+    console.log('the number is in range');
+  }
+
+
+if (userInput2 == gameNumber){
+  console.log("the correct number has been guessed")
+} else {
+  console.log("try again")
+  }
+
+
+var movement = "left";
+var message = "";
+
+  switch (movement) {
+    case "forward" :
+      message = "You've walked one step forward";
+      break;
+    case "backward":
+      message = "You've walked one step backward";
+      break;
+    case "left":
+      message = "You've sidestepped to the left";
+      break;
+    case "right":
+      message = "You've sidestepped to the right";
+      break;
+      default:
+      console.log("Where are you going?");
+  }
+
+  console.log("Moved in this direction:", message);
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
