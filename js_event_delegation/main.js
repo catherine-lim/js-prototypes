@@ -1,5 +1,14 @@
 
+$(document).ready(initialzeApp);
 
+function initialzeApp(){
+    addButtonToList();
+    addButtonToList();
+   // $('.list-group button').on('click', addDot);
+    $('#add-btn').on('click', addButtonToList);
+    $('.list-group').on('click','button',addDot);
+
+}
 
 
 
