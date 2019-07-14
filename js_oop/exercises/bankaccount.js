@@ -14,11 +14,10 @@ class Account{
 		//returns the new amount in the account
 
 if (amount > 0 ){
-	this.moneyInAccount = this.moneyInAccount + amount;
-	return this.moneyInAccount;
+	this.moneyInAccount += amount;
+	return this.moneyInAccount
 } else {
 	return false;
-
 }
 
 	}
@@ -30,17 +29,19 @@ if (amount > 0 ){
 		//if more, only withdraw the amount in the account, not more
 		//if less, withdraw the amount specified
 		//return the amount actually withdrawn
-		if (amount > 0) {
-		} else {
+		if (amount <= 0 ) {
 			return false;
 		}
-		 					if  (amount > this.moneyInAccount) {
-			 						amount -= this.moneyInAccount ;
-									return this.moneyInAccount;
-							} if (amount < this.moneyInAccount) {
-										this.moneyInAccount -= amount ;
-										return amount;
+		if (amount > this.moneyInAccount) {
+			var amountToWithdraw = this.moneyInAccount;
+
+		} else {
+			amountToWithdraw = amount;
+			return amountToWithdraw;
+
 		}
+
+
 	}
 	getAmount( ){
 		//returns the amount in the account
