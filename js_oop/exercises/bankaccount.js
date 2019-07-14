@@ -29,7 +29,7 @@ if (amount > 0 ){
 		//if more, only withdraw the amount in the account, not more
 		//if less, withdraw the amount specified
 		//return the amount actually withdrawn
-		if (amount <= 0 ) {
+		if (amount <= 0 || typeof amount !== 'number' ) {
 			return false;
 		}
 		if (amount > this.moneyInAccount) {
@@ -37,10 +37,11 @@ if (amount > 0 ){
 
 		} else {
 			amountToWithdraw = amount;
-			return amountToWithdraw;
+
 
 		}
-
+		this.moneyInAccount -= amountToWithdraw;
+		return amountToWithdraw;
 
 	}
 	getAmount( ){
