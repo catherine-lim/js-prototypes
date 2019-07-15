@@ -9,6 +9,9 @@ class RandomGenerator{
 			this.min = 1;
 			this.max = 10;
 		}
+
+
+		//this.min = min || 1 
 		//takes in the minimum and maximum values
 		//if they are not defined, it sets the minimum to 1, and the max to 10
 		//makes storage for the random number

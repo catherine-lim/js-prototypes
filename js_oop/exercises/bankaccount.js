@@ -38,7 +38,6 @@ if (amount > 0 ){
 		} else {
 			amountToWithdraw = amount;
 
-
 		}
 		this.moneyInAccount -= amountToWithdraw;
 		return amountToWithdraw;
