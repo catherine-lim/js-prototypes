@@ -48,4 +48,4 @@ if (amount > 0 ){
 		//returns the amount in the account
 		return this.moneyInAccount;
 		}
-	}
+}
