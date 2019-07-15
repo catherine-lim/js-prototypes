@@ -47,22 +47,19 @@ var newAccount = new Account();
 			//'account is not empty'
 		//otherwise deletes the account from the constructor storage
 		//returns 'account <accountNumber> deleted'
-		if (this.account[accountNumber] === undefined) {
-			var a = "account " + accountNumber + " does not exist";
-			return a;
-		} else if (this.account[accountNumber] === undefined){
-			var b = "account " + accountNumber + " is not empty";
-			return b;
+		if (!this.account[accountNumber]) {
+			return "account " + accountNumber + " does not exist";
+		} else if (this.account[accountNumber].moneyInAccount){
+			return "account is not empty";
 	 } else {
 			delete this.account[accountNumber]
-			var c = "account " + accountNumber + " deleted";
-			return c;
+			return "account " + accountNumber + " deleted";
 		}
 
 	}
 
 
-	deposit(accountNumber, numericAmount ){
+	deposit(accountNumber, amount ){
 		//deposits money into an account
 		//takes in an account number and a numeric amount
 		//if the account doesn't exist, returns
@@ -71,22 +68,30 @@ var newAccount = new Account();
 			//returns
 			//"account <accountNumber> now has <new account amount>
 
-		if (this.account[accountNumber] === undefined){
-			var a = "account does not exist " ;
-			return a;
+		if (!this.account[accountNumber]){
+		return "account does not exist";
 		} else {
-			var b = "account " + accountNumber + " now has" + this.account[accountAmount] ;
-			return b;
+		this.account[accountNumber].add(amount);
+			return "account " + accountNumber + " now has " + this.account[accountNumber].moneyInAccount;
+
 		}
 
 
 	}
-	withdraw( accountNumber, amount ){
+	withdraw(accountNumber,amount){
 		//removes money from an account
 		//takes in an account number and an amount
 		//checks if the account exists, if not
 			//return 'account does not exist'
 		//uses the Account's remove method to withdraw funds from the account
 		//returns "removed <amount withdrawn> from account <account number>. It now has <remaining amount in account>"
+		if (!this.account[accountNumber]) {
+			return "account does not exist";
+		} else {
+			var amountWithdraw = this.account[accountNumber].remove(amount);
+			return "removed " + amountWithdraw + " from account " + accountNumber + ". It now has " + this.account[accountNumber].moneyInAccount;
 	}
+
+	}
+
 }
