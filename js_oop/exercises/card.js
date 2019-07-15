@@ -16,8 +16,9 @@ class Deck{
 	constructor(){
 		//takes in nothing
 		//make storage for your card objects
+		this.card = {};
 	}
-	addCard( suit, faceValue ){
+	addCard( 'suit', faceValue ){
 		//adds a card to the deck
 		//takes in a string suit and faceValue
 		//makes a new card Object from the Card template
