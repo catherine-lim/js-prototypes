@@ -11,6 +11,7 @@ class Input{
 	this.element = null;
 	this.min = null;
 	this.max = null;
+	
 
 	}
 	//setRange sets the minimum and maximum range, if necessary, for the input
@@ -99,10 +100,13 @@ class Input{
 		Don't store the CSS selector, you made the element, store the direct dom object itself!
 		*/
 	showError(message){
-		var target=
+		var inputPosition = $(this.input).position();
+			var inputHeight = $(this.input).height();
+			var errorMessage = inputPosition.top + inputHeight;
+			this.newDomElement = $('<div>').addClass('inputError').css('top', errorMessage).css('left',inputPosition.left).text(message);
+			$(this.input).parent().append(this.newDomElement);
+		}
 
-
-	}
 	/*
 	hideError removes the error dom element from the DOM for the given input
 	arguments: none
@@ -111,6 +115,6 @@ class Input{
 		removes the dom element in question (https://www.w3schools.com/jquery/html_remove.asp)
 		*/
 	hideError(){
-	// this.remove();
+	   $(this.newDomElement).remove();
 	}	
 }
