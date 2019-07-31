@@ -14,8 +14,8 @@ class ColorSquare{
 		you'll need to bind the handleClick method to this object:
 			this.handleClick = this.handleClick.bind(this)
 	*/
-	constructor(colors,domElementClass,colorsIndex ){
-		this.colors = colors;
+	constructor(colorsArray,domElementClass,colorsIndex ){
+		this.colorsArray = colorsArray;
 		this.colorsIndex = colorsIndex;
 		this.domElementClass = domElementClass;
 		this.domElement = null ;
@@ -44,7 +44,7 @@ class ColorSquare{
 		this object's property of the neighbor to the right
 	*/
 	get neighbor(){
-
+		return this.neighborRight;
 	}
 	/*
 	click handler for this dom element
